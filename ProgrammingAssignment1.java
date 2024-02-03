@@ -29,11 +29,12 @@ class SY2022bit041 {
         }
 
         int admissionYear = Integer.parseInt(inputRegNo.substring(0, 4));
-        String inputbranchCode = inputRegNo.substring(4, 7);
+        String inputBranchCode = inputRegNo.substring(4, 7);
+        char degreeChar = inputRegNo.charAt(5);
 
         
-        if ((isValidYear(admissionYear)) &&
-                (isValidBranch(inputbranchCode)) && (isValidSerialNo(inputRegNo))) {
+        if ((isValidYear(admissionYear)) && (degreeChar == 'b') &&
+                (isValidBranch(inputBranchCode)) && (isValidSerialNo(inputRegNo))) {
            
             return true;
         }
@@ -49,8 +50,8 @@ class SY2022bit041 {
     /*Checks if the brnchCode is valid or not
      Valid departments: bit, bcs, bme, bch */
     public boolean isValidBranch(String branchCode) {
-        return branchCode.equalsIgnoreCase("bit") || branchCode.equalsIgnoreCase("bcs")
-                || branchCode.equalsIgnoreCase("bme") || branchCode.equalsIgnoreCase("bch");
+        return branchCode.equalsIgnoreCase("it") || branchCode.equalsIgnoreCase("cs")
+                || branchCode.equalsIgnoreCase("me") || branchCode.equalsIgnoreCase("ch");
     }
     
     //Checks whether the 3 digit serial number contains all integer digits
