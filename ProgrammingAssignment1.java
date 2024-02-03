@@ -43,7 +43,7 @@ class SY2022bit041 {
     
  //Checks if the year is between 2000 and 2024
     public boolean isValidYear(int year) {
-        return year >= 2000 && year < 2024;
+        return year >= 2000 && year <= 2024;
     }
     
     /*Checks if the brnchCode is valid or not
